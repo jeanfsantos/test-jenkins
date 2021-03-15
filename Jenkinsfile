@@ -6,6 +6,7 @@ pipeline {
       choices: ['patch', 'minor', 'major'],
       description: 'Escolha versão'
     )
+    string(defaultValue: '', description: '', name: 'branch', trim: true)
   }
   stages {
     stage('Versão') {
