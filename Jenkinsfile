@@ -2,15 +2,15 @@ pipeline {
   agent any
   parameters {
     choice(
-      name: 'Env',
-      choices: ['DEV', 'QA', 'UAT', 'PROD'],
-      description: 'Passing the Environment'
+      name: 'Version',
+      choices: ['patch', 'minor', 'major'],
+      description: 'Escolha versão'
     )
   }
   stages {
-    stage('Environment') {
+    stage('Versão') {
       steps {
-        echo " The environment is ${params.Env}"
+        echo "A versão é ${params.Version}"
       }
     }
   }
